@@ -2,8 +2,14 @@ var health = 100;
 const slapButton = document.getElementById('slap-button')
 
 function slap() {
-    if () {
-        health--;      
+        health--;   
+        alert(health)
+        update();   
     }
-    draw();
-  }
+
+function update() {
+  health.innerText = document.getElementById('health')
+
+}
+
+update()
