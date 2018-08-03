@@ -8,7 +8,7 @@ function slap() {
     }
 
 function update() {
-  health.innerText = document.getElementById('health')
+ document.getElementById('health').innerText = health.toString()
 
 }
 
