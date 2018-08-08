@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/game.css">
-    <title>Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vendr</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <header class="mt-5"><span>Health:<span id="health">--</span></span>
-       <span>Hits:<span id="hits">--</span></span>
-       <span>Name:<span id="targetName"></span></span>
-        </header>
-        <div class="row">
-            <img src="assets/creeper.png" width="200px" />
-        </div>
-        <div class="row">
-            <div class="footer">
-                <button id="slap-button" class="btn btn-success" onclick="slap()">Slap Me</button>
-            <button id="punch-button" class="btn btn-primary" onclick="punch()">Punch Me</button>
-        <buton id="kick-button" class="btn btn-info" onclick="kick()">Kick Me</buton>   
-        </div>
-        </div>
+  <main>
+    <div id="food">
     </div>
-    <script src="game.js"></script>
+    <div class="money">
+      <button onclick="app.controllers.storeController.addMoney('quarter')">$0.25</button>
+      <button onclick="app.controllers.storeController.addMoney('dime')">$0.10</button>
+      <button onclick="app.controllers.storeController.addMoney('nickel')">$0.05</button>
+    </div>
+    <button onclick="app.controllers.storeController.giveChange()">Give Change</button>
+    <div class="change">
+      <p>Change: $
+        <span id="total">0.00</span>
+      </p>
+    </div>
+  </main>
+  <img src="" id="vended-item">
+
+  <script src="main.js" type="module">
+  </script>
 </body>
 
 </html>
