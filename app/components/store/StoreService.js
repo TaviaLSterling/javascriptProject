@@ -12,9 +12,6 @@ class StoreService {
   constructor() {
 
   }
-  giveChange() {
-    return sm.giveChange()
-  }
 
   getItems() {
     return sm.getItems()
@@ -24,7 +21,7 @@ class StoreService {
   }
 
   vend(foodIndex) {
-    return sm.vend(foodIndex)
+    return sm.buy(foodIndex)
   }
 
 }

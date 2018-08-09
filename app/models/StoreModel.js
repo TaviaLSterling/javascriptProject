@@ -1,28 +1,24 @@
-class VendingMachine {
+class StoreModel {
     constructor() {
       this.transactionTotal = 0
-      this.acceptableCurrency = {
-        quarter: .25,
-        dime: .1,
-        nickel: .05
-      }
-      this.foodItems = [{
-        id: 'a1',
-        img: 'https://target.scene7.com/is/image/Target/51591776?wid=400&hei=400&fmt=pjpeg',
-        price: 1.25,
+      
+      this.bookItems = [{
+        id: 'book1',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/51R7mLxzL7L._SX327_BO1,204,203,200_.jpg',
+        price: 10.50,
+        quantity: 20
+      }, {
+        id: 'book2',
+        img: 'http://www.robinhobb.com/wp-content/uploads/2010/01/RoyalAssassin-UK.jpg',
+        price: 12.00,
+        quantity: 8
+      }, {
+        id: 'book3',
+        img: 'http://www.robinhobb.com/wp-content/uploads/2010/01/AssassinsQuest-UK.jpg',
+        price: 15.00,
         quantity: 10
-      }, {
-        id: 'a2',
-        img: 'https://pbs.twimg.com/profile_images/824647153721106432/gwLIQxqy_400x400.jpg',
-        price: 2.00,
-        quantity: 1
-      }, {
-        id: 'a3',
-        img: 'http://www.mountaindew.com/assets/content/38195/20881/21892-grew-dew-product.png',
-        price: .75,
-        quantity: 15
       }]
-      this.machineTotal = 10
+      this.till = 0
     }
   
     addMoney(coin) {
@@ -30,32 +26,37 @@ class VendingMachine {
         this.transactionTotal += this.acceptableCurrency[coin]
         return this.transactionTotal.toFixed(2)
       }
-      return 'invalid coin'
+    
     }
   
   
-    vend(foodIndex) { //foodId
-      let item = this.foodItems[foodIndex] //let item = this.foodItems.find(i => i.id == foodId)
+    buy(bookIndex) { //foodId
+      let item = this.bookItems[bookIndex] //let item = this.foodItems.find(i => i.id == foodId)
       if (this.transactionTotal >= item.price && item.quantity > 0) {
         item.quantity -= 1
         this.transactionTotal -= item.price
-        this.machineTotal += item.price
+        this.till += item.price
         return {
           img: item.img,
           total: this.transactionTotal.toFixed(2)
         }
       }
     }
-    giveChange() {
+     giveChange() {
       let change = this.transactionTotal
       this.transactionTotal = 0
       return change
-    }
+     }
   
     getItems() {
-      return this.foodItems
+      return this.bookItems
     }
+    pay(price) {
+        let item = this.bookItems[price]
+        this.transactionTotal = 0
+        this.till += this.bookItems.price
+     }
   }
   
   
-  export default VendingMachine
+  export default StoreModel

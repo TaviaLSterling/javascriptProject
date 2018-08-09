@@ -16,7 +16,7 @@ function drawItems() {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     template += `
-            <div class="food-item" onclick="app.controllers.storeController.vend(${i})">
+            <div class="book-item" onclick="app.controllers.storeController.vend(${i})">
               <img src="${item.img}" alt = "">
               <h3> ${item.price}</h3> 
             </div>
@@ -26,7 +26,7 @@ function drawItems() {
 }
 
 function drawVend(img) {
-  document.getElementById('vended-item').setAttribute('src', img)
+  document.getElementById('bought-item').setAttribute('src', img)
 }
 
 //PUBLIC PARTS
