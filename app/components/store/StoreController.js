@@ -44,11 +44,9 @@ class StoreController {
 
   }
 
-  //used to send money to service
-  addMoney(cur) {
-    let total = storeService.addMoney(cur)
-    drawTotal(total)
-  }
+pay() {
+    
+}
 
   buy(bookIndex) {
     let result = storeService.buy(bookIndex)

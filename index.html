@@ -14,19 +14,25 @@
     <div id="book">
     </div>
     <div class="money">
-      <button onclick="app.controllers.storeController.addMoney('quarter')">Buy Book 1</button>
-      <button onclick="app.controllers.storeController.addMoney('dime')">Buy Book 2</button>
-      <button onclick="app.controllers.storeController.addMoney('nickel')">Buy Book 3</button>
+      <button onclick="app.controllers.storeController.buy()">Buy Book 1</button>
+      <button onclick="app.controllers.storeController.buy()">Buy Book 2</button>
+      <button onclick="app.controllers.storeController.buy()">Buy Book 3</button>
     </div>
-    <button onclick="app.controllers.storeController.giveChange()">Give Change</button>
+    <button onclick="app.controllers.storeController.pay()">Pay</button>
     <div class="change">
-      <p>Total: $
-        <span id="total">0.00</span>
-      </p>
+     
     </div>
   </main>
   <img src="" id="bought-item">
-
+   <p>Subtotal: $
+        <span id="subtotal">0.00</span>
+      </p>
+      <p>Tax: $
+        <span id="tax">0.00</span>
+          </p>
+      <p>Total: $
+  <span id="total">0.00</span>
+    </p>
   <script src="main.js" type="module">
   </script>
 </body>

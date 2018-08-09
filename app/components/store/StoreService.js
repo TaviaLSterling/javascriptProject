@@ -1,4 +1,5 @@
 import StoreModel from "../../models/StoreModel.js";
+import ProductModel from "../../models/ProductModel.js"
 
 //Private Parts
 
@@ -16,14 +17,14 @@ class StoreService {
   getItems() {
     return sm.getItems()
   }
-  addMoney(type) {
-    return sm.addMoney(type)
-  }
+
 
   buy(bookIndex) {
     return sm.buy(bookIndex)
   }
-
+  pay(bookIndex) {
+      return sm.pay(bookIndex)
+  }
 }
 
 

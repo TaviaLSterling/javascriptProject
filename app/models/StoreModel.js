@@ -1,7 +1,7 @@
 class StoreModel {
     constructor() {
       this.transactionTotal = 0
-      
+      this.subtotal = 0
       this.bookItems = [{
         id: 'book1',
         img: 'https://images-na.ssl-images-amazon.com/images/I/51R7mLxzL7L._SX327_BO1,204,203,200_.jpg',
@@ -21,23 +21,14 @@ class StoreModel {
       this.till = 0
     }
   
-    addMoney(coin) {
-      if (this.acceptableCurrency[coin]) {
-        this.transactionTotal += this.acceptableCurrency[coin]
-        return this.transactionTotal.toFixed(2)
-      }
-    
-    }
-  
-  
-    buy(bookIndex) { //foodId
-      let item = this.bookItems[bookIndex] //let item = this.foodItems.find(i => i.id == foodId)
-      if (this.transactionTotal >= item.price && item.quantity > 0) {
-        item.quantity -= 1
-        this.transactionTotal -= item.price
-        this.till += item.price
+ 
+    buy(bookId) { //foodId
+      let item = this.bookItems.find(i => i.id == bookId) //let item = this.foodItems.find(i => i.id == foodId)
+      if (this.bookItems[bookId].quantity > 0) {
         return {
           img: item.img,
+          subtotal: this.bookItems[bookId].price,
+          tax: this.subtotal * .06,
           total: this.transactionTotal.toFixed(2)
         }
       }
@@ -46,10 +37,11 @@ class StoreModel {
     getItems() {
       return this.bookItems
     }
-    pay(price) {
-        let item = this.bookItems[price]
+    pay(bookIndex) {
+        let item = this.bookItems[bookIndex].price
         this.transactionTotal = 0
-        this.till += this.bookItems.price
+        this.bookItems[bookIndex].quantity -= 1
+        this.till += this.transactionTotal
      }
   }
   
