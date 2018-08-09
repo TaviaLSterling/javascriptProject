@@ -20,8 +20,8 @@ class StoreService {
     return sm.addMoney(type)
   }
 
-  vend(foodIndex) {
-    return sm.buy(foodIndex)
+  buy(bookIndex) {
+    return sm.buy(bookIndex)
   }
 
 }

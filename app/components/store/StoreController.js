@@ -22,10 +22,10 @@ function drawItems() {
             </div>
             `
   }
-  document.getElementById('food').innerHTML = template
+  document.getElementById('book').innerHTML = template
 }
 
-function drawVend(img) {
+function drawBuy(img) {
   document.getElementById('bought-item').setAttribute('src', img)
 }
 
@@ -41,7 +41,6 @@ class StoreController {
   giveChange() {
     var change = storeService.giveChange()
     drawTotal("0.00")
-    alert(change)
 
   }
 
@@ -51,11 +50,11 @@ class StoreController {
     drawTotal(total)
   }
 
-  vend(foodIndex) {
-    let result = storeService.vend(foodIndex)
+  buy(bookIndex) {
+    let result = storeService.buy(bookIndex)
     if (result) {
       drawTotal(result.total)
-      drawVend(result.img)
+      drawBuy(result.img)
     }
   }
 

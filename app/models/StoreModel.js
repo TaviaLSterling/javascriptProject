@@ -42,12 +42,7 @@ class StoreModel {
         }
       }
     }
-     giveChange() {
-      let change = this.transactionTotal
-      this.transactionTotal = 0
-      return change
-     }
-  
+      
     getItems() {
       return this.bookItems
     }

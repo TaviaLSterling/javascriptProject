@@ -1,8 +1,8 @@
-#food img {
+#book img {
     height: 100px;
   }
   
-  #food {
+  #book {
     display: flex;
   }
   
@@ -11,5 +11,5 @@
     text-align: center;
   }
   body{
-    background-color:grey;
+    background-color:rgb(149, 89, 151);
   }
